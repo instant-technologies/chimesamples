@@ -14,6 +14,8 @@ Translate incoming adaptive card types from DirectLine adaptive cards to BotFram
 Send a json data bag of user information into chime via an api route
 Shut down conversation
 ```
+## Usage
+Open CustomerBot.sln to launch into the visual studio project. Check out the readme.md inside the solution folder for important usage information. 
 ## Important Files
 
 ```bash
