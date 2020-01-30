@@ -94,6 +94,8 @@ You can see if these values are being passed back into the system by checking on
 
 A developer may want to query a queue for status on agents, waiting seekers, or other information.  There is an authenticated end point available via this sample end point… where Chime can return this information (this sample does not include this request). 
 
+This is an example of a json response to this route. 
+
 ![queue info](https://user-images.githubusercontent.com/60370937/73482866-811e5880-436c-11ea-8cc6-66462ee4b02a.png)
 
 ## Further reading
