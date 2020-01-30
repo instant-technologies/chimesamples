@@ -88,7 +88,9 @@ bot.BotSecret = "Directline Secret";
 
 Chime sends down conversations using Adaptive Cards – and bot framework handles these cards differently.  In the example, there is code to transform these cards.
 
-When the sample bot acts as the proxy, you can make an authenticated\non authenticated post via HTTP using this endpoint to pass along some custom values that Chime might care about and have those values associated with a chat session.  This information is wrapped using the seekerdata object.  This information can be passed at any point in the conversation.  
+When the sample bot acts as the proxy, you can make an authenticated\non authenticated post via HTTP using this endpoint to pass along some custom values that Chime might care about and have those values associated with a chat session.  This information is wrapped using the seekerdata object.  This information can be passed at any point in the conversation. 
+
+You can see if these values are being passed back into the system by checking on a sessions details. 
 
 A developer may want to query a queue for status on agents, waiting seekers, or other information.  There is an authenticated end point available via this sample end point… where Chime can return this information (this sample does not include this request).  
 This is the endpoint
