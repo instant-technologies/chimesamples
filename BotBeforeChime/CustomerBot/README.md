@@ -94,7 +94,6 @@ A developer may want to query a queue for status on agents, waiting seekers, or 
 This is the endpoint
 This is the return value
 
-
 ## Further reading
 
 We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
