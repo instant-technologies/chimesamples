@@ -75,13 +75,14 @@ SeekerData.cs
 
 ## Deploy the bot to Azure
 
+To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+
+## Further reading
+
 We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
 
 For information on how to implement a node.js implementation of this bot check out https://github.com/microsoft/BotFramework-DirectLineJS
 
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
-
-## Further reading
 
 - [Bot Framework Documentation](https://docs.botframework.com)
 - [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
