@@ -77,6 +77,22 @@ SeekerData.cs
 
 To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
 
+## Technical Discussion
+
+To run this project against a Chime instance, you will need the following information on a Chime bot framework endpoint (dispatcher) found in customerbot.cs
+                        bot.BotId = "MSAppId";
+                        bot.BotName = "Directline Bot Name";
+                        bot.BotSecret = "Directline Secret";
+
+Chime sends down conversations using Adaptive Cards – and bot framework handles these cards differently.  In the example, there is code to transform these cards – background info on this is here in this technote (if you have it)
+
+When the sample bot acts as the proxy, you can make an authenticated\non authenticated post via HTTP using this endpoint to pass along some custom values that Chime might care about and have those values associated with a chat session.  This information is wrapped using the seekerdata object.  This information can be passed at any point in the conversation.  
+
+A developer may want to query a queue for status on agents, waiting seekers, or other information.  There is an authenticated end point available via this sample end point… where Chime can return this information (this sample does not include this request).  
+This is the endpoint
+This is the return value
+
+
 ## Further reading
 
 We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
