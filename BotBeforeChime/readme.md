@@ -23,3 +23,9 @@ CustomerBot.cs
 DirectLineSession.cs
 SeekerData.cs
 ```
+
+##Additional notes
+We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
+
+For information on how to implement a node.js implementation of this bot check out https://github.com/microsoft/BotFramework-DirectLineJS
+
