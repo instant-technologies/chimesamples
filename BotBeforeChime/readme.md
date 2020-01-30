@@ -14,6 +14,23 @@ Translate incoming adaptive card types from DirectLine adaptive cards to BotFram
 Send a json data bag of user information into chime via an api route
 Shut down conversation
 ```
+## Technical Discussion
+
+To run this project against a Chime instance, you will need the following information on a Chime bot framework endpoint (dispatcher) found in customerbot.cs
+```bash
+bot.BotId = "MSAppId";
+bot.BotName = "Directline Bot Name";
+bot.BotSecret = "Directline Secret";
+```
+
+Chime sends down conversations using Adaptive Cards – and bot framework handles these cards differently.  In the example, there is code to transform these cards.
+
+When the sample bot acts as the proxy, you can make an authenticated\non authenticated post via HTTP using this endpoint to pass along some custom values that Chime might care about and have those values associated with a chat session.  This information is wrapped using the seekerdata object.  This information can be passed at any point in the conversation.  
+
+A developer may want to query a queue for status on agents, waiting seekers, or other information.  There is an authenticated end point available via this sample end point… where Chime can return this information (this sample does not include this request).  
+This is the endpoint
+This is the return value
+
 ## Usage
 Open CustomerBot.sln to launch into the visual studio project. Check out the readme.md inside the solution folder for important usage information. 
 ## Important Files
