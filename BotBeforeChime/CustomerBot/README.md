@@ -1,3 +1,7 @@
+# CustomerBot
+
+This bot has been created using [Bot Framework](https://dev.botframework.com), it shows the minimum code required to build a bot.
+
 ## Summary
 
 If you are developing a Microsoft botframework bot, and you would like to proxy a conversation over to chime if the bot cannot solve the end user request, this is an example of how you can connect the bot to chime via the DirectLine api.
@@ -21,17 +25,6 @@ CustomerBot.cs
 DirectLineSession.cs
 SeekerData.cs
 ```
-
-## Additional notes
-We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
-
-For information on how to implement a node.js implementation of this bot check out https://github.com/microsoft/BotFramework-DirectLineJS
-
-# CustomerBot
-
-Bot Framework v4 empty bot sample.
-
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows the minimum code required to build a bot.
 
 ## Prerequisites
 
@@ -81,6 +74,10 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 - Enter a Bot URL of `http://localhost:3978/api/messages`
 
 ## Deploy the bot to Azure
+
+We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
+
+For information on how to implement a node.js implementation of this bot check out https://github.com/microsoft/BotFramework-DirectLineJS
 
 To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
 
