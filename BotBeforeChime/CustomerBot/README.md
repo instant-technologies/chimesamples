@@ -80,9 +80,11 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 ## Technical Discussion
 
 To run this project against a Chime instance, you will need the following information on a Chime bot framework endpoint (dispatcher) found in customerbot.cs
-                        bot.BotId = "MSAppId";
-                        bot.BotName = "Directline Bot Name";
-                        bot.BotSecret = "Directline Secret";
+```bash
+bot.BotId = "MSAppId";
+bot.BotName = "Directline Bot Name";
+bot.BotSecret = "Directline Secret";
+```
 
 Chime sends down conversations using Adaptive Cards – and bot framework handles these cards differently.  In the example, there is code to transform these cards – background info on this is here in this technote (if you have it)
 
