@@ -94,15 +94,15 @@ You can see if these values are being passed back into the system by checking on
 
 ![Capture](https://user-images.githubusercontent.com/60370937/73483658-ce4efa00-436d-11ea-9213-ff7c7ba858ce.PNG)
 
-A developer may want to query a queue for status on agents, waiting seekers, or other information.  There is an authenticated end point available via this sample end point… where Chime can return this information (this sample does not include this request). 
+A developer may want to query a queue for status on agents, waiting seekers, or other information.  
 
-This is an example of a json response to this route. 
+To access our public api routes to get information on queue level attributess go to https://addchime.com/api.html
+
+This is an example of a json response from these routes. 
 
 ![queue info](https://user-images.githubusercontent.com/60370937/73482866-811e5880-436c-11ea-8cc6-66462ee4b02a.png)
 
 ## Further reading
-
-We do currently have an api route that can retreive queue level information and we are currently working on a way to authenticate outside bots to this route. 
 
 For information on how to implement a node.js implementation of this bot check out https://github.com/microsoft/BotFramework-DirectLineJS
 
