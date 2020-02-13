@@ -106,6 +106,10 @@ This is an example of a json response from these routes.
 
 For information on how to implement a node.js implementation of this bot check out https://github.com/microsoft/BotFramework-DirectLineJS
 
+When implementing this solution in node here are some important code pieces:
+
+![nodepic](https://user-images.githubusercontent.com/60370937/74465809-125cf700-4e64-11ea-8702-84a5aa54561b.jpg)
+
 
 - [Bot Framework Documentation](https://docs.botframework.com)
 - [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
