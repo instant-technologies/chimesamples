@@ -1,0 +1,314 @@
+{
+  "id": 4,
+  "name": "Instant Demo Queue",
+  "description": "Text resources for the Instant Demo Queue queue",
+  "language": 1,
+  "Resources": {
+    "WelcomeMessage": {
+      "Id": 103,
+      "Type": 0,
+      "Name": "WelcomeMessage",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"TextBlock\",\n      \"size\": \"Medium\",\n      \"color\": \"Accent\",\n      \"text\": \"**We are now trying locating an agent**\"\n    },\n    {\n      \"type\": \"TextBlock\",\n      \"text\": \"Someone will connect with you shortly to assist you.\",\n      \"wrap\": true\n    },\n    {\n      \"type\": \"TextBlock\",\n      \"text\": \"The average wait time is approximately @Model.SeekerAverageWaitTime seconds\",\n      \"wrap\": true\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "TempWelcomeMessage": {
+      "Id": 104,
+      "Type": 1,
+      "Name": "TempWelcomeMessage",
+      "Text": "This Queue is currently under maintenance, please try again later.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "QueryPrompt": {
+      "Id": 105,
+      "Type": 2,
+      "Name": "QueryPrompt",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"TextBlock\",\n      \"size\": \"Medium\",\n      \"color\": \"Accent\",\n      \"text\": \"**Welcome to the help desk**\"\n    },\n    {\n      \"type\": \"TextBlock\",\n      \"text\": \"Your first name:\",\n      \"wrap\": true\n    },\n    {\n      \"type\": \"Input.Text\",\n      \"id\": \"firstName\",\n      \"value\": \"@Model.SeekerFirstName\",\n      \"placeholder\": \"Please provide additional details...\"\n    },\n    {\n      \"type\": \"TextBlock\",\n      \"text\": \"Please provide additional details about your request. If your request looks accurate, then just click continue\",\n      \"wrap\": true\n    },\n    {\n      \"type\": \"Input.Text\",\n      \"id\": \"question\",\n      \"value\": \"@Model.SeekerQuestion\",\n      \"placeholder\": \"Please provide additional details...\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"type\": \"Action.Submit\",\n      \"title\": \"Continue\"\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "SearchingForExpert": {
+      "Id": 106,
+      "Type": 3,
+      "Name": "SearchingForExpert",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"Container\",\n      \"items\": [\n        {\n          \"type\": \"TextBlock\",\n          \"size\": \"Medium\",\n          \"color\": \"Accent\",\n          \"text\": \"**Help Desk: Current Information**\",\n          \"isSubtle\": true\n        },\n        {\n          \"type\": \"TextBlock\",\n          \"text\": \"@Model.CurrentDate \",\n          \"isSubtle\": true\n        },\n        {\n          \"type\": \"TextBlock\",\n          \"text\": \"Please wait, @Model.SeekerFullName, while I locate an expert for you.\"\n        }\n      ]\n    },\n    {\n      \"type\": \"Container\",\n      \"spacing\": \"None\",\n      \"items\": [\n        {\n          \"type\": \"ColumnSet\",\n          \"columns\": [\n            {\n              \"type\": \"Column\",\n              \"items\": [\n                {\n                  \"type\": \"TextBlock\",\n                  \"text\": \"Your request is: @Model.SeekerQuestion\"\n                },\n                {\n                  \"type\": \"TextBlock\",\n                  \"text\": \"Approx wait: @Model.SeekerAverageWaitTime sec\",\n                  \"isSubtle\": true\n                }\n              ],\n              \"width\": \"stretch\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\",\n  \"speak\": \"IT Service Desk Current Statistics\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "NoExpertAvailable": {
+      "Id": 107,
+      "Type": 4,
+      "Name": "NoExpertAvailable",
+      "Text": "{\r\n    \"type\": \"AdaptiveCard\",\r\n    \"body\": [\r\n        {\r\n            \"type\": \"ColumnSet\",\r\n            \"columns\": [\r\n                {\r\n                    \"type\": \"Column\",\r\n                    \"items\": [\r\n                        {\r\n                            \"type\": \"TextBlock\",\r\n                            \"size\": \"Medium\",\r\n                            \"weight\": \"Bolder\",\r\n                            \"text\": \"No agents were available - we are sorry\"\r\n                        },\r\n                        {\r\n                            \"type\": \"TextBlock\",\r\n                            \"text\": \"Please give us some additional information for a prompt follow up\",\r\n                            \"isSubtle\": true,\r\n                            \"wrap\": true\r\n                        },\r\n                        {\r\n                            \"type\": \"TextBlock\",\r\n                            \"text\": \"Your name\",\r\n                            \"wrap\": true\r\n                        },\r\n                        {\r\n                            \"type\": \"Input.Text\",\r\n                            \"id\": \"myName\",\r\n                            \"placeholder\": \"Last, First\"\r\n                        },\r\n                        {\r\n                            \"type\": \"TextBlock\",\r\n                            \"text\": \"Your email\",\r\n                            \"wrap\": true\r\n                        },\r\n                        {\r\n                            \"type\": \"Input.Text\",\r\n                            \"id\": \"myEmail\",\r\n                            \"placeholder\": \"@Model.SeekerEmail\",\r\n                            \"style\": \"Email\"\r\n                        },\r\n                        {\r\n                            \"type\": \"TextBlock\",\r\n                            \"text\": \"Phone Number\"\r\n                        },\r\n                        {\r\n                            \"type\": \"Input.Text\",\r\n                            \"id\": \"myTel\",\r\n                            \"placeholder\": \"xxx.xxx.xxxx\",\r\n                            \"style\": \"Tel\"\r\n                        }\r\n                    ],\r\n                    \"width\": 2\r\n                },\r\n                {\r\n                    \"type\": \"Column\",\r\n                    \"items\": [\r\n                        {\r\n                            \"type\": \"Image\",\r\n                            \"url\": \"http://www.addchime.com/assets/img/form_bot.png\",\r\n                            \"size\": \"Medium\"\r\n                        }\r\n                    ],\r\n                    \"width\": 1\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"actions\": [\r\n        {\r\n            \"type\": \"Action.Submit\",\r\n            \"title\": \"Submit\"\r\n        }\r\n    ],\r\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\r\n    \"version\": \"1.0\"\r\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "AllExpertsBusy": {
+      "Id": 108,
+      "Type": 5,
+      "Name": "AllExpertsBusy",
+      "Text": "All agents are busy handling other chats.  Please wait for an agent to become available",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ExpertLeft": {
+      "Id": 109,
+      "Type": 6,
+      "Name": "ExpertLeft",
+      "Text": "Expert @Model.ExpertFullName has closed their chat session.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "SeekerTransferred": {
+      "Id": 110,
+      "Type": 7,
+      "Name": "SeekerTransferred",
+      "Text": "You have just been transferred from the @Model.TransferFrom Queue to the @Model.TransferTo Queue by @Model.ExpertFullName.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "PromptExpert": {
+      "Id": 111,
+      "Type": 8,
+      "Name": "PromptExpert",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"ColumnSet\",\n      \"separator\": true,\n      \"columns\": [\n        {\n          \"type\": \"Column\",\n          \"verticalContentAlignment\": \"Center\",\n          \"items\": [\n            {\n              \"type\": \"Image\",\n              \"style\": \"Person\",\n              \"url\": \"https://@Model.ServerFQDN/Chime/Utility/GetSeekerPhoto?seekerEmail=@Model.SeekerEmail\",\n              \"size\": \"Small\"\n            }\n          ],\n          \"width\": \"auto\"\n        },\n        {\n          \"type\": \"Column\",\n          \"items\": [\n            {\n              \"type\": \"TextBlock\",\n              \"horizontalAlignment\": \"Left\",\n              \"text\": \"@Model.SeekerFullName\"\n            },\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"None\",\n              \"weight\": \"Bolder\",\n              \"text\": \"Waiting: @Model.SeekerTimeWaitingMinutes\"\n            },\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"None\",\n              \"text\": \"@Model.SeekerQuestion\",\n              \"wrap\": true\n            }\n          ],\n          \"width\": \"auto\"\n        },\n        {\n          \"type\": \"Column\",\n          \"verticalContentAlignment\": \"Center\",\n          \"items\": [\n            {\n              \"type\": \"Image\",\n              \"horizontalAlignment\": \"Center\",\n              \"selectAction\": {\n                \"type\": \"Action.Submit\",\n                \"title\": \"Pick Chat (Teams)\",\n                \"data\": {\n                  \"pickChat\": \"/pick @Model.ChatID\"\n                }\n              },\n              \"url\": \"https://@Model.ServerFQDN/Chime/Content/images/teams.png\",\n              \"size\": \"Small\",\n              \"altText\": \"Pick Chat (Teams)\"\n            }\n          ],\n          \"width\": \"auto\"\n        },\n        {\n          \"type\": \"Column\",\n          \"verticalContentAlignment\": \"Center\",\n          \"items\": [\n            {\n              \"type\": \"Image\",\n              \"horizontalAlignment\": \"Center\",\n              \"selectAction\": {\n                \"type\": \"Action.OpenUrl\",\n                \"title\": \"Pick Chat (Web)\",\n                \"url\": \"https://@Model.ServerFQDN/Chime/#!/agent-webchat/@Model.QueueID/@Model.SessionGuidUrlEncoded\"\n              },\n              \"url\": \"https://@Model.ServerFQDN/Chime/Content/images/chime_square.png\",\n              \"size\": \"Small\",\n              \"altText\": \"Pick Chat (Web)\"\n            }\n          ],\n          \"width\": \"auto\"\n        }\n      ]\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "ExpertConnected": {
+      "Id": 112,
+      "Type": 9,
+      "Name": "ExpertConnected",
+      "Text": "{\n    \"type\": \"AdaptiveCard\",\n    \"body\": [\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"You are now connected with @Model.SeekerFullName\"\n        },\n        {\n            \"type\": \"TextBlock\",\n            \"text\": \"Their question is: @Model.SeekerQuestion\"\n        }\n    ],\n    \"actions\": [\n        {\n            \"type\": \"Action.OpenUrl\",\n            \"title\": \"View Chime Tools (standard replies, etc)\",\n            \"url\": \"https://@Model.ExpertCWEUrl\"\n        }\n    ],\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n    \"version\": \"1.0\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "SeekerPickedByOther": {
+      "Id": 113,
+      "Type": 10,
+      "Name": "SeekerPickedByOther",
+      "Text": "Incoming request has timed out.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ExpertHelpText": {
+      "Id": 114,
+      "Type": 11,
+      "Name": "ExpertHelpText",
+      "Text": "Following operator commands are supported by Broadcast Queues: Note:These commands aren''t supported anymore.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ExpertQueueMessage": {
+      "Id": 115,
+      "Type": 12,
+      "Name": "ExpertQueueMessage",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"TextBlock\",\n      \"text\": \"Hello @Model.ExpertFullName, you are a member of the @Model.QueueName queue.\",\n      \"wrap\": true\n    }\n  ],\n  \"actions\": [\n    {\n      \"type\": \"Action.OpenUrl\",\n      \"title\": \"Open Queue Dashboard\",\n      \"url\": \"@Model.QueueDashboardUrl\"\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "SeekerLeft": {
+      "Id": 116,
+      "Type": 13,
+      "Name": "SeekerLeft",
+      "Text": "Customer @Model.SeekerFullName has closed their chat session.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ConnectionError": {
+      "Id": 117,
+      "Type": 14,
+      "Name": "ConnectionError",
+      "Text": "The connection has been broken.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "SeekerConnected": {
+      "Id": 118,
+      "Type": 15,
+      "Name": "SeekerConnected",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"ColumnSet\",\n      \"columns\": [\n        {\n          \"type\": \"Column\",\n          \"items\": [\n            {\n              \"type\": \"Image\",\n              \"url\": \"https://adaptivecards.io/content/airplane.png\",\n              \"size\": \"Small\"\n            }\n          ],\n          \"width\": \"auto\"\n        },\n        {\n          \"type\": \"Column\",\n          \"items\": [\n            {\n              \"type\": \"TextBlock\",\n              \"horizontalAlignment\": \"Right\",\n              \"spacing\": \"None\",\n              \"size\": \"Large\",\n              \"color\": \"Good\",\n              \"text\": \"Successfully Connected with Agent\"\n            }\n          ],\n          \"width\": \"stretch\"\n        }\n      ]\n    },\n    {\n      \"type\": \"ColumnSet\",\n      \"spacing\": \"Medium\",\n      \"separator\": true,\n      \"columns\": [\n        {\n          \"type\": \"Column\",\n          \"items\": [\n            {\n              \"type\": \"TextBlock\",\n              \"weight\": \"Bolder\",\n              \"text\": \"Guest Information\",\n              \"isSubtle\": true\n            },\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"Small\",\n              \"text\": \"@Model.SeekerFullName\"\n            },\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"Small\",\n              \"text\": \"Wait time: @Model.SeekerTimeWaiting\"\n            },\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"Small\",\n              \"text\": \"Question: @Model.SeekerQuestion\"\n            }\n          ],\n          \"width\": \"stretch\"\n        },\n        {\n          \"type\": \"Column\",\n          \"width\": \"auto\"\n        }\n      ]\n    },\n    {\n      \"type\": \"ColumnSet\",\n      \"spacing\": \"Medium\",\n      \"separator\": true,\n      \"columns\": [\n        {\n          \"type\": \"Column\",\n          \"items\": [\n            {\n              \"type\": \"TextBlock\",\n              \"weight\": \"Bolder\",\n              \"text\": \"Agent Information\",\n              \"isSubtle\": true\n            },\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"Small\",\n              \"text\": \"First name: @Model.ExpertFirstName\"\n            }\n          ],\n          \"width\": 1\n        }\n      ]\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\",\n  \"speak\": \"Flight KL0605 to San Fransisco has been delayed.It will not leave until 10:10 AM.\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "SystemOffline": {
+      "Id": 119,
+      "Type": 16,
+      "Name": "SystemOffline",
+      "Text": "We are sorry, @Model.QueueName is currently offline. Please try again later.",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ResendQuestion": {
+      "Id": 120,
+      "Type": 17,
+      "Name": "ResendQuestion",
+      "Text": "@Model.SeekerQuestion",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "AlertFooter": {
+      "Id": 121,
+      "Type": 18,
+      "Name": "AlertFooter",
+      "Text": "This is an automated message",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "RoutingTagMenuGreeting": {
+      "Id": 122,
+      "Type": 19,
+      "Name": "RoutingTagMenuGreeting",
+      "Text": "Please select from the following options.",
+      "PlainOnly": true,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "RoutingTagMenuOption0": {
+      "Id": 123,
+      "Type": 20,
+      "Name": "RoutingTagMenuOption0",
+      "Text": "All other problems",
+      "PlainOnly": true,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "RoutingTagMenuInvalidResponse": {
+      "Id": 124,
+      "Type": 21,
+      "Name": "RoutingTagMenuInvalidResponse",
+      "Text": "Please select a number from the menu",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "BroadcastTakenByOther": {
+      "Id": 125,
+      "Type": 22,
+      "Name": "BroadcastTakenByOther",
+      "Text": "@Model.ExpertFullName has picked this chat request",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "AgentNameFormat": {
+      "Id": 126,
+      "Type": 23,
+      "Name": "AgentNameFormat",
+      "Text": "@Model.ExpertFullName",
+      "PlainOnly": true,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ExternalBotResponse": {
+      "Id": 127,
+      "Type": 24,
+      "Name": "ExternalBotResponse",
+      "Text": "{\r\n    \"type\": \"AdaptiveCard\",\r\n    \"body\": [\r\n        {\r\n            \"type\": \"TextBlock\",\r\n            \"weight\": \"Bolder\",\r\n            \"text\": \"@Model.BotName\"\r\n        },\r\n        {\r\n            \"type\": \"TextBlock\",\r\n            \"text\": \"@Model.Text\",\r\n            \"wrap\": true\r\n        }\r\n    ],\r\n    \"actions\": [\r\n        {\r\n            \"type\": \"Action.Submit\",\r\n            \"title\": \"Connect with an agent\",\r\n            \"data\": {\r\n                \"msg\": \"/agent\"\r\n            }\r\n        },\r\n        {\r\n            \"type\": \"Action.Submit\",\r\n            \"title\": \"End Chat - Issue Resolved\",\r\n            \"data\": {\r\n                \"msg\": \"/end\"\r\n            }\r\n        }\r\n    ],\r\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\r\n    \"version\": \"1.0\"\r\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "SeekerHelpText": {
+      "Id": 128,
+      "Type": 25,
+      "Name": "SeekerHelpText",
+      "Text": "You can use these special commands during the chat:",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ExternalBotPrompt": {
+      "Id": 129,
+      "Type": 26,
+      "Name": "ExternalBotPrompt",
+      "Text": "Please select an option",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "PostChatSurvey": {
+      "Id": 130,
+      "Type": 27,
+      "Name": "PostChatSurvey",
+      "Text": "{\r\n    \"type\": \"AdaptiveCard\",\r\n    \"body\": [\r\n        {\r\n            \"type\": \"TextBlock\",\r\n            \"text\": \"Please provide feedback on your experience\"\r\n        },\r\n        {\r\n            \"type\": \"Input.ChoiceSet\",\r\n            \"id\": \"seekerRating\",\r\n            \"choices\": [\r\n                {\r\n                    \"title\": \"Excellent\",\r\n                    \"value\": \"5\"\r\n                },\r\n                {\r\n                    \"title\": \"Good\",\r\n                    \"value\": \"4\"\r\n                },\r\n                {\r\n                    \"title\": \"OK\",\r\n                    \"value\": \"3\"\r\n                },\r\n                {\r\n                    \"title\": \"Poor\",\r\n                    \"value\": \"2\"\r\n                },\r\n                {\r\n                    \"title\": \"Bad\",\r\n                    \"value\": \"1\"\r\n                }\r\n            ],\r\n            \"style\": \"expanded\"\r\n        },\r\n        {\r\n            \"type\": \"Input.Text\",\r\n            \"id\": \"seekerComment\",\r\n            \"placeholder\": \"Comments...\",\r\n            \"isMultiLine\":true\r\n        }\r\n    ],\r\n    \"actions\": [\r\n        {\r\n            \"type\": \"Action.Submit\",\r\n            \"title\": \"Submit\"\r\n        }\r\n    ],\r\n    \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\r\n    \"version\": \"1.0\"\r\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "PostChatSurveyAcknowledgement": {
+      "Id": 131,
+      "Type": 28,
+      "Name": "PostChatSurveyAcknowledgement",
+      "Text": "Thanks",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "RouteToAgent": {
+      "Id": 132,
+      "Type": 29,
+      "Name": "RouteToAgent",
+      "Text": "Route to Agent",
+      "PlainOnly": true,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "Submit": {
+      "Id": 133,
+      "Type": 30,
+      "Name": "Submit",
+      "Text": "Submit",
+      "PlainOnly": true,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    },
+    "ToAgentWrapper": {
+      "Id": 134,
+      "Type": 31,
+      "Name": "ToAgentWrapper",
+      "Text": "{\n  \"type\": \"AdaptiveCard\",\n  \"body\": [\n    {\n      \"type\": \"ColumnSet\",\n      \"separator\": true,\n      \"columns\": [\n        {\n          \"type\": \"Column\",\n          \"items\": [\n            {\n              \"type\": \"TextBlock\",\n              \"spacing\": \"None\",\n              \"weight\": \"Bolder\",\n              \"text\": \"@Model.SeekerDisplayName says:\"\n            }\n          ],\n          \"width\": \"auto\"\n        },\n        {\n          \"type\": \"Column\",\n          \"verticalContentAlignment\": \"Center\",\n          \"items\": [\n            {\n              \"type\": \"Image\",\n              \"horizontalAlignment\": \"Center\",\n              \"selectAction\": {\n                \"type\": \"Action.OpenUrl\",\n                \"title\": \"Pick Chat (Web)\",\n                \"url\": \"https://@Model.ServerFQDN/Chime/#!/agent-webchat/@Model.QueueID/@Model.SessionGuidUrlEncoded\"\n              },\n              \"url\": \"https://@Model.ServerFQDN/Chime/Content/images/chime_square.png\",\n              \"size\": \"Small\",\n              \"altText\": \"Pick Chat (Web)\"\n            }\n          ],\n          \"width\": \"auto\"\n        }\n      ]\n    }\n  ],\n  \"$schema\": \"http://adaptivecards.io/schemas/adaptive-card.json\",\n  \"version\": \"1.0\"\n}",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "ToSeekerWrapper": {
+      "Id": 135,
+      "Type": 32,
+      "Name": "ToSeekerWrapper",
+      "Text": "",
+      "PlainOnly": false,
+      "ContentType": "application/vnd.microsoft.card.adaptive",
+      "DisplayText": null
+    },
+    "None": {
+      "Id": 136,
+      "Type": -1,
+      "Name": "None",
+      "Text": "",
+      "PlainOnly": false,
+      "ContentType": "text/plain",
+      "DisplayText": null
+    }
+  }
+}
