@@ -98,7 +98,7 @@ A developer may want to query a queue for status on agents, waiting seekers, or 
 
 To access our public api routes to get information on queue level attributess go to https://addchime.com/api.html
 
-This is an example of a json response from these routes. 
+This is an example of a json response from these routes. Posting data to this json route is non-authenticated. 
 
 ![queue info](https://user-images.githubusercontent.com/60370937/73482866-811e5880-436c-11ea-8cc6-66462ee4b02a.png)
 
