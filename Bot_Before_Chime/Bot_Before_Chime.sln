@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot_Before_Chime", "Bot_Before_Chime\Bot_Before_Chime.csproj", "{B9B53AE8-E510-42F8-9467-B7D8415008F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9B53AE8-E510-42F8-9467-B7D8415008F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B53AE8-E510-42F8-9467-B7D8415008F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B53AE8-E510-42F8-9467-B7D8415008F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B53AE8-E510-42F8-9467-B7D8415008F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A9E9CEC-D5AD-4559-BFE1-3AA1947A0536}
+	EndGlobalSection
+EndGlobal
