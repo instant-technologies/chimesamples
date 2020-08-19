@@ -94,7 +94,6 @@ namespace Bot_Before_Chime
             }
 
 #if DEBUG
-            // crank this down to reproduce sanofi's bug #1970
             const int receiveChunkSize = 100;
 #else
             const int receiveChunkSize = 1024;
@@ -234,7 +233,6 @@ namespace Bot_Before_Chime
             return activity.From.Id == Bot.BotId
                    /* I don't know why, but the Q&A maker bots do this, rather than using an actual id for the bot */
                    || activity.From.Id == activity.From.Name
-                   // Sanofi Bots seem to do this for some reason...
                    || Bot.BotName == activity.From.Id;
         }
 
@@ -280,7 +278,7 @@ namespace Bot_Before_Chime
                     {
                         var card = new Microsoft.Bot.Schema.HeroCard
                         {
-                            // Title = activity.From.Name, // #1833 https://teaminstant.visualstudio.com/Customer%20Items/_workitems/edit/1833
+                           
                             Text = activity.Text.Replace("<br>", Environment.NewLine),
                             Buttons = activity.SuggestedActions.Actions.Select(a => new CardAction
                             {
@@ -339,7 +337,6 @@ namespace Bot_Before_Chime
                     {
                         var card = new Microsoft.Bot.Schema.HeroCard
                         {
-                            // Title = activity.From.Name, // #1833 https://teaminstant.visualstudio.com/Customer%20Items/_workitems/edit/1833
                             Text = activity.Text.Replace("<br>", Environment.NewLine),
                             Buttons = activity.SuggestedActions.Actions.Select(a => new CardAction
                             {
