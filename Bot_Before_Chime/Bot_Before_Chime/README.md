@@ -75,7 +75,7 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 
 ## Technical Discussion
 
-To run this project against a Chime instance, you will need the following information on a Chime bot framework endpoint (dispatcher) found in customerbot.cs
+To run this project against a Chime instance, you will need the following information on a Chime bot framework endpoint (dispatcher) found in SampleBot.cs
 ```bash
 bot.BotId = "MSAppId";
 bot.BotName = "Directline Bot Name";
