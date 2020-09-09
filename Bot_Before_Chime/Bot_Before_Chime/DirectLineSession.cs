@@ -107,6 +107,7 @@ namespace Bot_Before_Chime
             }
             catch (Exception ex)
             {
+                // Do custom error handling / logging here.
                 return;
             }
 
@@ -177,15 +178,15 @@ namespace Bot_Before_Chime
                         }
                         catch (OperationCanceledException)
                         {
-                            // do nothing here, the directline session got cancelled
+                            // Do custom error handling / logging here.
                         }
                         catch (WebSocketException wsex)
                         {
-                           
+                            // Do custom error handling / logging here.
                         }
                         catch (Exception ex)
                         {
-                            
+                            // Do custom error handling / logging here.
                         }
                     }
                    

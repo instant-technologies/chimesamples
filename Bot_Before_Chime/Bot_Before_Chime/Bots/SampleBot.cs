@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 /// <summary>
-/// This bot is very basic and mostly built directly off an example from microsoft. It asks a few questions and prepares an initial question to post to Chime directline bots and integrate into the Chime system. 
+/// This bot is intended to ask a few questions then proxy a conversation over to a Chime for Teams queue via DirectLineSession.cs which uses the directline sdk.  
 /// </summary>
 namespace Bot_Before_Chime.Bots
 {
@@ -22,19 +22,32 @@ namespace Bot_Before_Chime.Bots
         }
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
+            //This override will handle a new member being added to the chat. 
             foreach (var member in membersAdded)
             {
+                //checks to see if a new member has been added to the list of channel accounts
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
+                    //this will send an initial message to each new member added. In this case the message is 'Hi'
                     await turnContext.SendActivityAsync(MessageFactory.Text($"Hi!"), cancellationToken);
                 }
             }
         }
+        /// <summary>
+        /// This method will be called to get some initial information from the user prior to being proxied over to chime via directline 
+        /// </summary>
+        /// <param name="flow"></param>
+        /// <param name="profile"></param>
+        /// <param name="turnContext"></param>
+        /// <returns></returns>
         private static async Task FillOutUserProfileAsync(ConversationFlow flow, UserProfile profile, ITurnContext turnContext)
         {
+            
             string input = turnContext.Activity.Text?.Trim();
             string message;
-
+            //This switch case will move based on an order of a conversation flow. Here I simply ask "What is your name?" and "What is your question?" 
+            //I will save those values to a sample profile class to be sent over directline. 
+            //Chime will interpret these values based off the ChannelAccount Class. 
             switch (flow.LastQuestionAsked)
             {
                 case ConversationFlow.Question.None:
@@ -80,7 +93,8 @@ namespace Bot_Before_Chime.Bots
                         break;
                     }
                 case ConversationFlow.Question.Agent:
-                    //Here is where we will connect through something to an agent in chime....
+                    //At this point we will utilize the directlinesession.cs class to proxy a conversation between a botframework bot to chime via directline sdk.
+                    //We will send over the turnContext to the sessionhandler so the directline proxy knows where/when to send messages coming back from a chime agent. 
                     if (istransfered == false)
                     {
                         SessionHandler session = new SessionHandler(profile, turnContext);
@@ -136,9 +150,15 @@ namespace Bot_Before_Chime.Bots
 
             return message is null;
         }
+        /// <summary>
+        /// This override will handle new message activity. 
+        /// </summary>
+        /// <param name="turnContext"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
-
+          
             var conversationStateAccessors = _conversationState.CreateProperty<ConversationFlow>(nameof(ConversationFlow));
             var flow = await conversationStateAccessors.GetAsync(turnContext, () => new ConversationFlow());
 
