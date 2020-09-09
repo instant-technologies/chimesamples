@@ -10,7 +10,6 @@ Request to be sent to an agent
 Proxy the message over directline to a chime instance
 Manage DirectLine conversation sessions
 Translate incoming adaptive card types from DirectLine adaptive cards to BotFramework adaptive cards
-Send a json data bag of user information into chime via an api route
 Shut down conversation
 ```
 ## Usage
