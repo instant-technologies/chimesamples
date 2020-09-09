@@ -1,5 +1,5 @@
 ## BotBeforeChime
-
+INACTIVE AS OF 2020. Check out our new sample located here: https://github.com/instant-technologies/chimesamples/tree/master/Bot_Before_Chime
 ## Summary
 
 If you are developing a Microsoft botframework bot, and you would like to proxy a conversation over to chime if the bot cannot solve the end user request, this is an example of how you can connect the bot to chime via the DirectLine api.
