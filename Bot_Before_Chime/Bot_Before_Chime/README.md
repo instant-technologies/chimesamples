@@ -83,6 +83,16 @@ bot.BotSecret = "Directline Secret";
 
 Chime sends down conversations using Adaptive Cards – and bot framework handles these cards differently.  In the example, there is code to transform these cards.
 
+## Custom Seeker Metadata
+
+If you would like to add custom seeker metadata to a session, add name value pares into the channeldata property of a the first directline message sent into the chime queue.
+```bash
+“channelData”: {
+    “email”: foo@bar.com, // email
+    “locale”: “en-us”,  // locale
+    “skillTags”: “printer” // problem tag
+}
+```
 
 ## Further reading
 
